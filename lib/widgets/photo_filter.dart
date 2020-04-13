@@ -20,7 +20,7 @@ class PhotoFilter extends StatelessWidget {
     this.fit = BoxFit.fill,
     this.loader = const Center(
       child: CircularProgressIndicator(
-        strokeWidth: 1.0,
+        strokeWidth: 1.5,
       ),
     ),
   });
@@ -56,7 +56,7 @@ class PhotoFilter extends StatelessWidget {
 
 ///The PhotoFilterSelector Widget for apply filter from a selected set of filters
 class PhotoFilterSelector extends StatefulWidget {
-  final Widget title;
+  //final Widget title;
 
   final List<Filter> filters;
   final imageLib.Image image;
@@ -67,12 +67,12 @@ class PhotoFilterSelector extends StatefulWidget {
 
   const PhotoFilterSelector({
     Key key,
-    @required this.title,
+    //@required this.title,
     @required this.filters,
     @required this.image,
     this.loader = const Center(
       child: CircularProgressIndicator(
-        strokeWidth: 1.0,
+        strokeWidth: 1.5,
       ),
     ),
     this.fit = BoxFit.fill,
@@ -116,10 +116,10 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Expanded(
-                  flex: 6,
+                  flex: 4,
                   child: Container(
-                    width: double.infinity,
-                    height: double.infinity,
+                    //width: double.infinity,
+                    //height: double.infinity,
                     padding: EdgeInsets.all(12.0),
                     child: _buildFilteredImage(
                       _filter,
