@@ -18,7 +18,12 @@ class PhotoFilter extends StatelessWidget {
     @required this.filename,
     @required this.filter,
     this.fit = BoxFit.fill,
-    this.loader = const Center(child: CircularProgressIndicator()),
+    this.loader = const Center(
+      child: CircularProgressIndicator(
+        backgroundColor: Color.fromARGB(255, 116, 198, 222),
+        strokeWidth: 2.0,
+      ),
+    ),
   });
 
   @override
@@ -66,7 +71,12 @@ class PhotoFilterSelector extends StatefulWidget {
     @required this.title,
     @required this.filters,
     @required this.image,
-    this.loader = const Center(child: CircularProgressIndicator()),
+    this.loader = const Center(
+      child: CircularProgressIndicator(
+        backgroundColor: Color.fromARGB(255, 116, 198, 222),
+        strokeWidth: 2.0,
+      ),
+    ),
     this.fit = BoxFit.fill,
     @required this.filename,
     this.circleShape = false,
@@ -92,7 +102,6 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
     image = widget.image;
   }
 
-
   @override
   void dispose() {
     super.dispose();
@@ -100,81 +109,61 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: widget.title,
-        actions: <Widget>[
-          loading
-              ? Container()
-              : IconButton(
-                  icon: Icon(Icons.check),
-                  onPressed: () async {
-                    setState(() {
-                      loading = true;
-                    });
-                    var imageFile = await saveFilteredImage();
-
-                    Navigator.pop(context, {'image_filtered':imageFile} );
-                  },
-                )
-        ],
-      ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        child: loading
-            ? widget.loader
-            : Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    flex: 6,
-                    child: Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      padding: EdgeInsets.all(12.0),
-                      child: _buildFilteredImage(
-                        _filter,
-                        image,
-                        filename,
-                      ),
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      child: loading
+          ? widget.loader
+          : Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Expanded(
+                  flex: 6,
+                  child: Container(
+                    width: double.infinity,
+                    height: double.infinity,
+                    padding: EdgeInsets.all(12.0),
+                    child: _buildFilteredImage(
+                      _filter,
+                      image,
+                      filename,
                     ),
                   ),
-                  Expanded(
-                    flex: 2,
-                    child: Container(
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: widget.filters.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return InkWell(
-                            child: Container(
-                              padding: EdgeInsets.all(5.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  _buildFilterThumbnail(
-                                      widget.filters[index], image, filename),
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-                                  Text(
-                                    widget.filters[index].name,
-                                  )
-                                ],
-                              ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: widget.filters.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return InkWell(
+                          child: Container(
+                            padding: EdgeInsets.all(5.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                _buildFilterThumbnail(
+                                    widget.filters[index], image, filename),
+                                SizedBox(
+                                  height: 5.0,
+                                ),
+                                Text(
+                                  widget.filters[index].name,
+                                )
+                              ],
                             ),
-                            onTap: () => setState(() {
-                                  _filter = widget.filters[index];
-                                }),
-                          );
-                        },
-                      ),
+                          ),
+                          onTap: () => setState(() {
+                            _filter = widget.filters[index];
+                          }),
+                        );
+                      },
                     ),
                   ),
-                ],
-              ),
-      ),
+                ),
+              ],
+            ),
     );
   }
 
