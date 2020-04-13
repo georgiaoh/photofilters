@@ -16,9 +16,7 @@ class NoFilter extends ColorFilter {
 
 // Clarendon: adds light to lighter areas and dark to darker areas
 class ClarendonFilter extends ColorFilter {
-  final String name;
-  ClarendonFilter({this.name}) {
-    //ClarendonFilter() : super(name: "Clarendon") {
+  ClarendonFilter() : super(name: "Filter 1") {
     subFilters.add(new BrightnessSubFilter(.1));
     subFilters.add(new ContrastSubFilter(.1));
     subFilters.add(new SaturationSubFilter(.15));

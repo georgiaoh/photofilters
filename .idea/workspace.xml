@@ -83,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586778692602</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="allow to set name for filter">
+      <created>1586779500982</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1586779500982</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,6 +110,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="New file with app specific filters" />
     <MESSAGE value="Remove app bar and update progress indicator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove app bar and update progress indicator" />
+    <MESSAGE value="allow to set name for filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="allow to set name for filter" />
   </component>
 </project>
