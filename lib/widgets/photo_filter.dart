@@ -108,18 +108,14 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //width: double.infinity,
-      //height: double.infinity,
       child: loading
           ? widget.loader
           : Column(
-              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Expanded(
                   flex: 4,
                   child: Container(
-                    //width: double.infinity,
-                    //height: double.infinity,
                     padding: EdgeInsets.all(12.0),
                     child: _buildFilteredImage(
                       _filter,
