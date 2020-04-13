@@ -20,8 +20,7 @@ class PhotoFilter extends StatelessWidget {
     this.fit = BoxFit.fill,
     this.loader = const Center(
       child: CircularProgressIndicator(
-        backgroundColor: Color.fromARGB(255, 116, 198, 222),
-        strokeWidth: 2.0,
+        strokeWidth: 1.0,
       ),
     ),
   });
@@ -73,8 +72,7 @@ class PhotoFilterSelector extends StatefulWidget {
     @required this.image,
     this.loader = const Center(
       child: CircularProgressIndicator(
-        backgroundColor: Color.fromARGB(255, 116, 198, 222),
-        strokeWidth: 2.0,
+        strokeWidth: 1.0,
       ),
     ),
     this.fit = BoxFit.fill,
