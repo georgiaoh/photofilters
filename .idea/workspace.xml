@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80fa645e-5dd8-4cc7-ba20-6cc4240c3d86" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/photo_filter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/photo_filter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photofilters.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photofilters.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/filters/preset_filters.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/filters/preset_filters.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/filters/printpics_filters.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/filters/printpics_filters.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586006602849</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Remove app bar and update progress indicator">
+      <created>1586778692602</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586778692602</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,6 +102,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="New file with app specific filters" />
-    <option name="LAST_COMMIT_MESSAGE" value="New file with app specific filters" />
+    <MESSAGE value="Remove app bar and update progress indicator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove app bar and update progress indicator" />
   </component>
 </project>

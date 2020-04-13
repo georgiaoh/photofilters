@@ -1,10 +1,10 @@
-import 'dart:typed_data';
+//import 'dart:typed_data';
 import 'package:photofilters/filters/filters.dart';
 import 'preset_filters.dart';
 
 List<Filter> printPicsFilters = [
   NoFilter(),
-  ClarendonFilter(),
+  ClarendonFilter(name: 'Filter 1'),
   JunoFilter(),
   LudwigFilter(),
   LarkFilter(),
