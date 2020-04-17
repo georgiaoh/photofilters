@@ -4,7 +4,6 @@
     <list default="true" id="80fa645e-5dd8-4cc7-ba20-6cc4240c3d86" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widgets/photo_filter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/photo_filter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586787614237</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="remove flex from photo filter view">
+      <created>1587130329078</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587130329078</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,6 +168,7 @@
     <MESSAGE value="update size of image" />
     <MESSAGE value="reduce container size" />
     <MESSAGE value="update view of photo plus filters" />
-    <option name="LAST_COMMIT_MESSAGE" value="update view of photo plus filters" />
+    <MESSAGE value="remove flex from photo filter view" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove flex from photo filter view" />
   </component>
 </project>

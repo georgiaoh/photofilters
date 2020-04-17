@@ -113,51 +113,49 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
           : Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-//                Expanded(
-//                  flex: 4,
-//                  child:
-                Container(
-                  padding: EdgeInsets.all(12.0),
-                  child: _buildFilteredImage(
-                    _filter,
-                    image,
-                    filename,
+                Expanded(
+                  flex: 4,
+                  child: Container(
+                    padding: EdgeInsets.all(12.0),
+                    child: _buildFilteredImage(
+                      _filter,
+                      image,
+                      filename,
+                    ),
                   ),
                 ),
-                //),
-//                Expanded(
-//                  flex: 2,
-//                  child:
-                Container(
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: widget.filters.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return InkWell(
-                        child: Container(
-                          padding: EdgeInsets.all(5.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              _buildFilterThumbnail(
-                                  widget.filters[index], image, filename),
-                              SizedBox(
-                                height: 5.0,
-                              ),
-                              Text(
-                                widget.filters[index].name,
-                              )
-                            ],
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: widget.filters.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return InkWell(
+                          child: Container(
+                            padding: EdgeInsets.all(5.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                _buildFilterThumbnail(
+                                    widget.filters[index], image, filename),
+                                SizedBox(
+                                  height: 5.0,
+                                ),
+                                Text(
+                                  widget.filters[index].name,
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                        onTap: () => setState(() {
-                          _filter = widget.filters[index];
-                        }),
-                      );
-                    },
+                          onTap: () => setState(() {
+                            _filter = widget.filters[index];
+                          }),
+                        );
+                      },
+                    ),
                   ),
                 ),
-                //),
               ],
             ),
     );
