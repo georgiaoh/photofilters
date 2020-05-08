@@ -54,6 +54,16 @@ class PhotoFilter extends StatelessWidget {
   }
 }
 
+String _filterName;
+
+void setFilterName(Filter filter) {
+  _filterName = filter.name;
+}
+
+String getFilterName() {
+  return _filterName;
+}
+
 ///The PhotoFilterSelector Widget for apply filter from a selected set of filters
 class PhotoFilterSelector extends StatefulWidget {
   //final Widget title;
@@ -64,6 +74,7 @@ class PhotoFilterSelector extends StatefulWidget {
   final BoxFit fit;
   final String filename;
   final bool circleShape;
+  final Function onTapCallback;
 
   const PhotoFilterSelector({
     Key key,
@@ -78,6 +89,7 @@ class PhotoFilterSelector extends StatefulWidget {
     this.fit = BoxFit.fill,
     @required this.filename,
     this.circleShape = false,
+    this.onTapCallback,
   }) : super(key: key);
 
   @override
@@ -149,10 +161,10 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
                             ),
                           ),
                           onTap: () {
-                            print(_filter);
                             setState(() {
                               _filter = widget.filters[index];
                             });
+                            setFilterName(_filter);
                           },
                         );
                       },
