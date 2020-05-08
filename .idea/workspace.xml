@@ -163,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588940461597</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="save filtered image">
+      <created>1588945867297</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1588945867297</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,6 +200,7 @@
     <MESSAGE value="undid previous change" />
     <MESSAGE value="extract filter name when thumbnail is tapped" />
     <MESSAGE value="add method to set and get selected filter name" />
-    <option name="LAST_COMMIT_MESSAGE" value="add method to set and get selected filter name" />
+    <MESSAGE value="save filtered image" />
+    <option name="LAST_COMMIT_MESSAGE" value="save filtered image" />
   </component>
 </project>
