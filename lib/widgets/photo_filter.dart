@@ -189,7 +189,7 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
             case ConnectionState.active:
             case ConnectionState.waiting:
               return CircleAvatar(
-                radius: filter == _filter ? 50.0 : 25.0,
+                radius: filter == _filter ? 50.0 : 40.0,
                 child: Center(
                   child: widget.loader,
                 ),
@@ -200,7 +200,7 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
                 return Center(child: Text('Error: ${snapshot.error}'));
               cachedFilters[filter?.name ?? "_"] = snapshot.data;
               return CircleAvatar(
-                radius: filter == _filter ? 50.0 : 25.0,
+                radius: filter == _filter ? 50.0 : 40.0,
                 backgroundImage: MemoryImage(
                   snapshot.data,
                 ),
@@ -212,7 +212,7 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
       );
     } else {
       return CircleAvatar(
-        radius: filter == _filter ? 50.0 : 25.0,
+        radius: filter == _filter ? 50.0 : 40.0,
         backgroundImage: MemoryImage(
           cachedFilters[filter?.name ?? "_"],
         ),
