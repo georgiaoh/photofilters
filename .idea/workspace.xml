@@ -142,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587130329078</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="undid previous change">
+      <created>1587130646131</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587130646131</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +176,7 @@
     <MESSAGE value="reduce container size" />
     <MESSAGE value="update view of photo plus filters" />
     <MESSAGE value="remove flex from photo filter view" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove flex from photo filter view" />
+    <MESSAGE value="undid previous change" />
+    <option name="LAST_COMMIT_MESSAGE" value="undid previous change" />
   </component>
 </project>

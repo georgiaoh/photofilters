@@ -114,7 +114,7 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Expanded(
-                  flex: 4,
+                  flex: 2,
                   child: Container(
                     padding: EdgeInsets.all(12.0),
                     child: _buildFilteredImage(
@@ -125,7 +125,7 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
                   ),
                 ),
                 Expanded(
-                  flex: 2,
+                  flex: 1,
                   child: Container(
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
@@ -148,9 +148,12 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
                               ],
                             ),
                           ),
-                          onTap: () => setState(() {
-                            _filter = widget.filters[index];
-                          }),
+                          onTap: () {
+                            print(_filter);
+                            setState(() {
+                              _filter = widget.filters[index];
+                            });
+                          },
                         );
                       },
                     ),
