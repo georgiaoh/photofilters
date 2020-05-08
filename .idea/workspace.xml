@@ -156,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588938067554</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add method to set and get selected filter name">
+      <created>1588940461597</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588940461597</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,6 +192,7 @@
     <MESSAGE value="remove flex from photo filter view" />
     <MESSAGE value="undid previous change" />
     <MESSAGE value="extract filter name when thumbnail is tapped" />
-    <option name="LAST_COMMIT_MESSAGE" value="extract filter name when thumbnail is tapped" />
+    <MESSAGE value="add method to set and get selected filter name" />
+    <option name="LAST_COMMIT_MESSAGE" value="add method to set and get selected filter name" />
   </component>
 </project>

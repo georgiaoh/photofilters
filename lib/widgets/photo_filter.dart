@@ -74,7 +74,6 @@ class PhotoFilterSelector extends StatefulWidget {
   final BoxFit fit;
   final String filename;
   final bool circleShape;
-  final Function onTapCallback;
 
   const PhotoFilterSelector({
     Key key,
@@ -89,7 +88,6 @@ class PhotoFilterSelector extends StatefulWidget {
     this.fit = BoxFit.fill,
     @required this.filename,
     this.circleShape = false,
-    this.onTapCallback,
   }) : super(key: key);
 
   @override
@@ -164,6 +162,7 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
                             setState(() {
                               _filter = widget.filters[index];
                             });
+                            saveFilteredImage();
                             setFilterName(_filter);
                           },
                         );
