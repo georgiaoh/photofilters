@@ -344,7 +344,7 @@ class SelectedFilter extends StatelessWidget {
       height: 100.0,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(26.0)),
+        borderRadius: BorderRadius.all(Radius.circular(50.0)),
         border: Border.all(
           color: Color(0xFF0097af),
           width: 2.0,
