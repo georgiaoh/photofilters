@@ -190,10 +190,9 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
             case ConnectionState.waiting:
               return CircleAvatar(
                 radius: 50,
-                backgroundImage: MemoryImage(
-                  cachedFilters[filter?.name ?? "_"],
+                child: Center(
+                  child: widget.loader,
                 ),
-                backgroundColor: Colors.white,
               );
             case ConnectionState.done:
               if (snapshot.hasError)
@@ -202,7 +201,7 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
               return CircleAvatar(
                 radius: 50,
                 backgroundImage: MemoryImage(
-                  cachedFilters[filter?.name ?? "_"],
+                  snapshot.data,
                 ),
                 backgroundColor: Colors.white,
               );
