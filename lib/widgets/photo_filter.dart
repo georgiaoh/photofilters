@@ -188,36 +188,45 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
             case ConnectionState.none:
             case ConnectionState.active:
             case ConnectionState.waiting:
-              return CircleAvatar(
-                radius: filter == _filter ? 50.0 : 40.0,
-                child: Center(
-                  child: widget.loader,
-                ),
-                backgroundColor: Colors.white,
+              MemoryImage image = MemoryImage(
+                cachedFilters[filter?.name ?? "_"],
               );
+              return filter == _filter
+                  ? SelectedFilter(image: image)
+                  : CircleAvatar(
+                      radius: 50,
+                      backgroundImage: image,
+                      backgroundColor: Colors.white,
+                    );
             case ConnectionState.done:
               if (snapshot.hasError)
                 return Center(child: Text('Error: ${snapshot.error}'));
               cachedFilters[filter?.name ?? "_"] = snapshot.data;
-              return CircleAvatar(
-                radius: filter == _filter ? 50.0 : 40.0,
-                backgroundImage: MemoryImage(
-                  snapshot.data,
-                ),
-                backgroundColor: Colors.white,
+              MemoryImage image = MemoryImage(
+                cachedFilters[filter?.name ?? "_"],
               );
+              return filter == _filter
+                  ? SelectedFilter(image: image)
+                  : CircleAvatar(
+                      radius: 50,
+                      backgroundImage: image,
+                      backgroundColor: Colors.white,
+                    );
           }
           return null; // unreachable
         },
       );
     } else {
-      return CircleAvatar(
-        radius: filter == _filter ? 50.0 : 40.0,
-        backgroundImage: MemoryImage(
-          cachedFilters[filter?.name ?? "_"],
-        ),
-        backgroundColor: Colors.white,
+      MemoryImage image = MemoryImage(
+        cachedFilters[filter?.name ?? "_"],
       );
+      return filter == _filter
+          ? SelectedFilter(image: image)
+          : CircleAvatar(
+              radius: 50,
+              backgroundImage: image,
+              backgroundColor: Colors.white,
+            );
     }
   }
 
@@ -322,4 +331,30 @@ List<int> buildThumbnail(Map<String, dynamic> params) {
   int width = params["width"];
   params["image"] = imageLib.copyResize(params["image"], width: width);
   return applyFilter(params);
+}
+
+///Global selected filter widget
+class SelectedFilter extends StatelessWidget {
+  final MemoryImage image;
+  SelectedFilter({this.image});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 100.0,
+      height: 100.0,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(26.0)),
+        border: Border.all(
+          color: Color(0xFF0097af),
+          width: 2.0,
+        ),
+      ),
+      child: CircleAvatar(
+        radius: 44.0,
+        backgroundImage: image,
+        backgroundColor: Colors.white,
+      ),
+    );
+  }
 }
