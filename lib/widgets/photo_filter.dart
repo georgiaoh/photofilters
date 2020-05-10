@@ -189,42 +189,37 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
             case ConnectionState.active:
             case ConnectionState.waiting:
               return CircleAvatar(
-                      radius: 50,
-                      backgroundImage: MemoryImage(
-                        cachedFilters[filter?.name ?? "_"],
-                      ),
-                      backgroundColor: Colors.white,
-                    );
+                radius: 50,
+                backgroundImage: MemoryImage(
+                  cachedFilters[filter?.name ?? "_"],
+                ),
+                backgroundColor: Colors.white,
+              );
             case ConnectionState.done:
               if (snapshot.hasError)
                 return Center(child: Text('Error: ${snapshot.error}'));
               cachedFilters[filter?.name ?? "_"] = snapshot.data;
-              return filter == _filter
-                  ? _selectedFilter(filter)
-                  : CircleAvatar(
-                      radius: 50,
-                      backgroundImage: MemoryImage(
-                        cachedFilters[filter?.name ?? "_"],
-                      ),
-                      backgroundColor: Colors.white,
-                    );
+              return CircleAvatar(
+                radius: 50,
+                backgroundImage: MemoryImage(
+                  cachedFilters[filter?.name ?? "_"],
+                ),
+                backgroundColor: Colors.white,
+              );
           }
           return null; // unreachable
         },
       );
     } else {
-      return filter == _filter
-          ? _selectedFilter(filter)
-          : CircleAvatar(
-              radius: 50,
-              backgroundImage: MemoryImage(
-                cachedFilters[filter?.name ?? "_"],
-              ),
-              backgroundColor: Colors.white,
-            );
+      return CircleAvatar(
+        radius: 50,
+        backgroundImage: MemoryImage(
+          cachedFilters[filter?.name ?? "_"],
+        ),
+        backgroundColor: Colors.white,
+      );
     }
   }
-
 
 //  filter == _filter
 //  ? Container(
@@ -247,9 +242,6 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
 //  ),
 //  )
 //      :
-
-
-
 
   Future<String> get _localPath async {
     final directory = await getApplicationDocumentsDirectory();
