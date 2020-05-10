@@ -199,10 +199,13 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
                     width: filter == _filter ? 2.0 : 0.0,
                   ),
                 ),
-                child: CircleAvatar(
-                  radius: filter == _filter ? 36.0 : 50,
-                  child: Center(
-                    child: widget.loader,
+                child: Padding(
+                  padding: EdgeInsets.all(filter == _filter ? 10.0 : 0.0),
+                  child: CircleAvatar(
+                    radius: filter == _filter ? 40.0 : 50,
+                    child: Center(
+                      child: widget.loader,
+                    ),
                   ),
                 ),
               );
@@ -221,12 +224,15 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
                     width: filter == _filter ? 2.0 : 0.0,
                   ),
                 ),
-                child: CircleAvatar(
-                  radius: filter == _filter ? 36.0 : 50,
-                  backgroundImage: MemoryImage(
-                    snapshot.data,
+                child: Padding(
+                  padding: EdgeInsets.all(filter == _filter ? 10.0 : 0.0),
+                  child: CircleAvatar(
+                    radius: filter == _filter ? 40.0 : 50,
+                    backgroundImage: MemoryImage(
+                      snapshot.data,
+                    ),
+                    backgroundColor: Colors.white,
                   ),
-                  backgroundColor: Colors.white,
                 ),
               );
           }
@@ -245,12 +251,15 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
             width: filter == _filter ? 2.0 : 0.0,
           ),
         ),
-        child: CircleAvatar(
-          radius: filter == _filter ? 36.0 : 50,
-          backgroundImage: MemoryImage(
-            cachedFilters[filter?.name ?? "_"],
+        child: Padding(
+          padding: EdgeInsets.all(filter == _filter ? 10.0 : 0.0),
+          child: CircleAvatar(
+            radius: filter == _filter ? 40.0 : 50,
+            backgroundImage: MemoryImage(
+              cachedFilters[filter?.name ?? "_"],
+            ),
+            backgroundColor: Colors.white,
           ),
-          backgroundColor: Colors.white,
         ),
       );
     }

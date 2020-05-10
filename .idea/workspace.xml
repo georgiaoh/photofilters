@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="80fa645e-5dd8-4cc7-ba20-6cc4240c3d86" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/photo_filter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/photo_filter.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -295,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589108528622</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="show selected filter with border on thumbnail">
+      <created>1589108537514</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1589108537514</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
