@@ -189,7 +189,24 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
             case ConnectionState.active:
             case ConnectionState.waiting:
               return filter == _filter
-                  ? _selectedFilter(filter)
+                  ? Container(
+                      width: 100.0,
+                      height: 100.0,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                        border: Border.all(
+                          color: Color(0xFF0097af),
+                          width: 2.0,
+                        ),
+                      ),
+                      child: CircleAvatar(
+                        radius: 44.0,
+                        backgroundImage:
+                            MemoryImage(cachedFilters[filter?.name ?? "_"]),
+                        backgroundColor: Colors.white,
+                      ),
+                    )
                   : CircleAvatar(
                       radius: 50,
                       backgroundImage: MemoryImage(
@@ -308,16 +325,16 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
 
   Container _selectedFilter(Filter filter) {
     return Container(
-//      width: 100.0,
-//      height: 100.0,
-//      decoration: BoxDecoration(
-//        color: Colors.white,
-//        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-//        border: Border.all(
-//          color: Color(0xFF0097af),
-//          width: 2.0,
-//        ),
-//      ),
+      width: 100.0,
+      height: 100.0,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+        border: Border.all(
+          color: Color(0xFF0097af),
+          width: 2.0,
+        ),
+      ),
       child: CircleAvatar(
         radius: 44.0,
         backgroundImage: MemoryImage(cachedFilters[filter?.name ?? "_"]),
