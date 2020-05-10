@@ -188,28 +188,26 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
             case ConnectionState.none:
             case ConnectionState.active:
             case ConnectionState.waiting:
-              MemoryImage image = MemoryImage(
-                cachedFilters[filter?.name ?? "_"],
-              );
               return filter == _filter
-                  ? _selectedFilter(image)
+                  ? _selectedFilter()
                   : CircleAvatar(
                       radius: 50,
-                      backgroundImage: image,
+                      backgroundImage: MemoryImage(
+                        cachedFilters[filter?.name ?? "_"],
+                      ),
                       backgroundColor: Colors.white,
                     );
             case ConnectionState.done:
               if (snapshot.hasError)
                 return Center(child: Text('Error: ${snapshot.error}'));
               cachedFilters[filter?.name ?? "_"] = snapshot.data;
-              MemoryImage image = MemoryImage(
-                cachedFilters[filter?.name ?? "_"],
-              );
               return filter == _filter
-                  ? _selectedFilter(image)
+                  ? _selectedFilter()
                   : CircleAvatar(
                       radius: 50,
-                      backgroundImage: image,
+                      backgroundImage: MemoryImage(
+                        cachedFilters[filter?.name ?? "_"],
+                      ),
                       backgroundColor: Colors.white,
                     );
           }
@@ -217,14 +215,13 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
         },
       );
     } else {
-      MemoryImage image = MemoryImage(
-        cachedFilters[filter?.name ?? "_"],
-      );
       return filter == _filter
-          ? _selectedFilter(image)
+          ? _selectedFilter()
           : CircleAvatar(
               radius: 50,
-              backgroundImage: image,
+              backgroundImage: MemoryImage(
+                cachedFilters[filter?.name ?? "_"],
+              ),
               backgroundColor: Colors.white,
             );
     }
@@ -309,7 +306,7 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
     }
   }
 
-  Container _selectedFilter(MemoryImage image) {
+  Container _selectedFilter() {
     return Container(
       width: 100.0,
       height: 100.0,
@@ -323,7 +320,7 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
       ),
       child: CircleAvatar(
         radius: 44.0,
-        backgroundImage: image,
+        backgroundImage: MemoryImage(cachedFilters[_filter?.name ?? "_"]),
         backgroundColor: Colors.white,
       ),
     );
