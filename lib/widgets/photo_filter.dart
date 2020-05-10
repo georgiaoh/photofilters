@@ -192,7 +192,7 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
                 cachedFilters[filter?.name ?? "_"],
               );
               return filter == _filter
-                  ? SelectedFilter(image: image)
+                  ? _selectedFilter(image)
                   : CircleAvatar(
                       radius: 50,
                       backgroundImage: image,
@@ -206,7 +206,7 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
                 cachedFilters[filter?.name ?? "_"],
               );
               return filter == _filter
-                  ? SelectedFilter(image: image)
+                  ? _selectedFilter(image)
                   : CircleAvatar(
                       radius: 50,
                       backgroundImage: image,
@@ -221,7 +221,7 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
         cachedFilters[filter?.name ?? "_"],
       );
       return filter == _filter
-          ? SelectedFilter(image: image)
+          ? _selectedFilter(image)
           : CircleAvatar(
               radius: 50,
               backgroundImage: image,
@@ -308,6 +308,26 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
             );
     }
   }
+
+  Container _selectedFilter(MemoryImage image) {
+    return Container(
+      width: 100.0,
+      height: 100.0,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+        border: Border.all(
+          color: Color(0xFF0097af),
+          width: 2.0,
+        ),
+      ),
+      child: CircleAvatar(
+        radius: 44.0,
+        backgroundImage: image,
+        backgroundColor: Colors.white,
+      ),
+    );
+  }
 }
 
 ///The global applyfilter function
@@ -331,30 +351,4 @@ List<int> buildThumbnail(Map<String, dynamic> params) {
   int width = params["width"];
   params["image"] = imageLib.copyResize(params["image"], width: width);
   return applyFilter(params);
-}
-
-///Global selected filter widget
-class SelectedFilter extends StatelessWidget {
-  final MemoryImage image;
-  SelectedFilter({this.image});
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 100.0,
-      height: 100.0,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-        border: Border.all(
-          color: Color(0xFF0097af),
-          width: 2.0,
-        ),
-      ),
-      child: CircleAvatar(
-        radius: 44.0,
-        backgroundImage: image,
-        backgroundColor: Colors.white,
-      ),
-    );
-  }
 }
