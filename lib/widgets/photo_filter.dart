@@ -193,16 +193,16 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
                 height: 100.0,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                  borderRadius: BorderRadius.all(Radius.circular(52.0)),
                   border: Border.all(
                     color: filter == _filter ? Color(0xFF0097af) : Colors.white,
-                    width: filter == _filter ? 2.0 : 0.0,
+                    width: 2.0,
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(filter == _filter ? 10.0 : 0.0),
+                  padding: EdgeInsets.all(filter == _filter ? 4.0 : 0.0),
                   child: CircleAvatar(
-                    radius: filter == _filter ? 40.0 : 50,
+                    radius: filter == _filter ? 46.0 : 50,
                     child: Center(
                       child: widget.loader,
                     ),
@@ -218,16 +218,16 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
                 height: 100.0,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                  borderRadius: BorderRadius.all(Radius.circular(52.0)),
                   border: Border.all(
                     color: filter == _filter ? Color(0xFF0097af) : Colors.white,
-                    width: filter == _filter ? 2.0 : 0.0,
+                    width: 2.0,
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(filter == _filter ? 10.0 : 0.0),
+                  padding: EdgeInsets.all(filter == _filter ? 4.0 : 0.0),
                   child: CircleAvatar(
-                    radius: filter == _filter ? 40.0 : 50,
+                    radius: filter == _filter ? 46.0 : 50,
                     backgroundImage: MemoryImage(
                       snapshot.data,
                     ),
@@ -245,16 +245,16 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
         height: 100.0,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(50.0)),
+          borderRadius: BorderRadius.all(Radius.circular(52.0)),
           border: Border.all(
             color: filter == _filter ? Color(0xFF0097af) : Colors.white,
-            width: filter == _filter ? 2.0 : 0.0,
+            width: 2.0,
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.all(filter == _filter ? 10.0 : 0.0),
+          padding: EdgeInsets.all(filter == _filter ? 4.0 : 0.0),
           child: CircleAvatar(
-            radius: filter == _filter ? 40.0 : 50,
+            radius: filter == _filter ? 46.0 : 50,
             backgroundImage: MemoryImage(
               cachedFilters[filter?.name ?? "_"],
             ),
