@@ -200,9 +200,10 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(filter == _filter ? 4.0 : 0.0),
+                  padding: EdgeInsets.all(4.0),
                   child: CircleAvatar(
-                    radius: filter == _filter ? 46.0 : 50,
+                    backgroundColor: Colors.white,
+                    radius: 46.0,
                     child: Center(
                       child: widget.loader,
                     ),
@@ -225,9 +226,9 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(filter == _filter ? 4.0 : 0.0),
+                  padding: EdgeInsets.all(4.0),
                   child: CircleAvatar(
-                    radius: filter == _filter ? 46.0 : 50,
+                    radius: 46.0,
                     backgroundImage: MemoryImage(
                       snapshot.data,
                     ),
@@ -252,9 +253,9 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.all(filter == _filter ? 4.0 : 0.0),
+          padding: EdgeInsets.all(4.0),
           child: CircleAvatar(
-            radius: filter == _filter ? 46.0 : 50,
+            radius: 46.0,
             backgroundImage: MemoryImage(
               cachedFilters[filter?.name ?? "_"],
             ),
