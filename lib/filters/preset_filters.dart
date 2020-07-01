@@ -6,7 +6,7 @@ import 'package:photofilters/filters/subfilters.dart';
 
 // NoFilter: No filter
 class NoFilter extends ColorFilter {
-  NoFilter() : super(name: "No Filter");
+  NoFilter() : super(name: "Original");
 
   @override
   void apply(Uint8List pixels) {
@@ -16,7 +16,7 @@ class NoFilter extends ColorFilter {
 
 // Clarendon: adds light to lighter areas and dark to darker areas
 class ClarendonFilter extends ColorFilter {
-  ClarendonFilter() : super(name: "Filter 1") {
+  ClarendonFilter() : super(name: "Clarendon") {
     subFilters.add(new BrightnessSubFilter(.1));
     subFilters.add(new ContrastSubFilter(.1));
     subFilters.add(new SaturationSubFilter(.15));

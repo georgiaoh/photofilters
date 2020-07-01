@@ -20,8 +20,9 @@ class _MyAppState extends State<MyApp> {
   File imageFile;
 
   Future getImage(context) async {
-    imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
+    var imageFile = await ImagePicker().getImage(source: ImageSource.gallery);
     fileName = basename(imageFile.path);
+    //File image = File(imageFile.path);
     var image = imageLib.decodeImage(imageFile.readAsBytesSync());
     image = imageLib.copyResize(image, width: 600);
     Map imagefile = await Navigator.push(

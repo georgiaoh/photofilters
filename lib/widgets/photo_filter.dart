@@ -161,9 +161,10 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
                           onTap: () {
                             setState(() {
                               _filter = widget.filters[index];
+                              setFilterName(_filter);
+                              print(_filter);
                             });
                             saveFilteredImage();
-                            setFilterName(_filter);
                           },
                         );
                       },
