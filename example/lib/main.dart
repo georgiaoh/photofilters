@@ -20,21 +20,26 @@ class _MyAppState extends State<MyApp> {
   File imageFile;
 
   Future getImage(context) async {
-    var imageFile = await ImagePicker().getImage(source: ImageSource.gallery);
-    fileName = basename(imageFile.path);
-    //File image = File(imageFile.path);
-    var image = imageLib.decodeImage(imageFile.readAsBytesSync());
-    image = imageLib.copyResize(image, width: 600);
+//    var imageFile = await ImagePicker().getImage(source: ImageSource.gallery);
+//    fileName = basename(imageFile.path);
+//    //File image = File(imageFile.path);
+//    var image = imageLib.decodeImage(imageFile.readAsBytesSync());
+    var image = await ImagePicker().getImage(source: ImageSource.gallery);
+    File _image = File(image.path);
+
+    //_image = imageLib.copyResize(_image, width: 600);
     Map imagefile = await Navigator.push(
       context,
       new MaterialPageRoute(
-        builder: (context) => new PhotoFilterSelector(
-          //title: Text("Photo Filter Example"),
-          image: image,
-          filters: presetFiltersList,
-          filename: fileName,
-          loader: Center(child: CircularProgressIndicator()),
-          fit: BoxFit.contain,
+        builder: (context) => Scaffold(
+          body: new PhotoFilterSelector(
+            //title: Text("Photo Filter Example"),
+            image: imageLib.decodeImage(_image.readAsBytesSync()),
+            filters: presetFiltersList,
+            filename: fileName,
+            loader: Center(child: CircularProgressIndicator()),
+            fit: BoxFit.contain,
+          ),
         ),
       ),
     );

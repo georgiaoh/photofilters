@@ -117,63 +117,75 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: loading
-          ? widget.loader
-          : Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    padding: EdgeInsets.all(12.0),
-                    child: _buildFilteredImage(
-                      _filter,
-                      image,
-                      filename,
-                    ),
+    OrientationBuilder(builder: (context, orientation) {
+      return Container(
+        child: loading
+            ? widget.loader
+            : orientation == Orientation.portrait
+                ? Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: _photoFilterViewer(orientation),
+                  )
+                : Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: _photoFilterViewer(orientation),
+                  ),
+      );
+    });
+  }
+
+  List<Widget> _photoFilterViewer(Orientation orientation) {
+    return [
+      Expanded(
+        flex: 2,
+        child: Container(
+          padding: EdgeInsets.all(12.0),
+          child: _buildFilteredImage(
+            _filter,
+            image,
+            filename,
+          ),
+        ),
+      ),
+      Expanded(
+        flex: 1,
+        child: Container(
+          child: ListView.builder(
+            scrollDirection: orientation == Orientation.portrait
+                ? Axis.horizontal
+                : Axis.vertical,
+            itemCount: widget.filters.length,
+            itemBuilder: (BuildContext context, int index) {
+              return InkWell(
+                child: Container(
+                  padding: EdgeInsets.all(5.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      _buildFilterThumbnail(
+                          widget.filters[index], image, filename),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      Text(
+                        widget.filters[index].name,
+                      )
+                    ],
                   ),
                 ),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: widget.filters.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return InkWell(
-                          child: Container(
-                            padding: EdgeInsets.all(5.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                _buildFilterThumbnail(
-                                    widget.filters[index], image, filename),
-                                SizedBox(
-                                  height: 5.0,
-                                ),
-                                Text(
-                                  widget.filters[index].name,
-                                )
-                              ],
-                            ),
-                          ),
-                          onTap: () {
-                            setState(() {
-                              _filter = widget.filters[index];
-                              setFilterName(_filter);
-                              print(_filter);
-                            });
-                            saveFilteredImage();
-                          },
-                        );
-                      },
-                    ),
-                  ),
-                ),
-              ],
-            ),
-    );
+                onTap: () {
+                  setState(() {
+                    _filter = widget.filters[index];
+                    setFilterName(_filter);
+                  });
+                  saveFilteredImage();
+                },
+              );
+            },
+          ),
+        ),
+      ),
+    ];
   }
 
   _buildFilterThumbnail(Filter filter, imageLib.Image image, String filename) {
