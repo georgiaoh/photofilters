@@ -117,7 +117,7 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
 
   @override
   Widget build(BuildContext context) {
-    OrientationBuilder(builder: (context, orientation) {
+    return OrientationBuilder(builder: (context, orientation) {
       return Container(
         child: loading
             ? widget.loader
