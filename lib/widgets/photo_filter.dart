@@ -74,6 +74,7 @@ class PhotoFilterSelector extends StatefulWidget {
   final BoxFit fit;
   final String filename;
   final bool circleShape;
+  final bool photoIsPortrait;
 
   const PhotoFilterSelector({
     Key key,
@@ -88,6 +89,7 @@ class PhotoFilterSelector extends StatefulWidget {
     this.fit = BoxFit.fill,
     @required this.filename,
     this.circleShape = false,
+    this.photoIsPortrait,
   }) : super(key: key);
 
   @override
@@ -98,8 +100,10 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
   String filename;
   Map<String, List<int>> cachedFilters = {};
   Filter _filter;
+  imageLib.Image _checkImage;
   imageLib.Image image;
   bool loading;
+  bool photoIsPortrait;
 
   @override
   void initState() {
@@ -107,12 +111,26 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
     loading = false;
     _filter = widget.filters[0];
     filename = widget.filename;
-    image = widget.image;
+    photoIsPortrait = widget.photoIsPortrait;
+    checkPhotoDimensions();
   }
 
   @override
   void dispose() {
     super.dispose();
+  }
+
+  void checkPhotoDimensions() {
+    _checkImage = widget.image;
+    if (photoIsPortrait) {
+      int height = _checkImage.width;
+      int width = _checkImage.height;
+      if (width > height) {
+        image = imageLib.copyRotate(_checkImage, 90);
+      }
+    } else {
+      image = _checkImage;
+    }
   }
 
   @override
