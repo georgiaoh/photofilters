@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="80fa645e-5dd8-4cc7-ba20-6cc4240c3d86" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widgets/photo_filter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/photo_filter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photofilters.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photofilters.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -362,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594813287029</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="make sure portrait photos are orientated correctly">
+      <created>1594908523919</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1594908523919</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -398,6 +403,7 @@
     <MESSAGE value="set filter name when filter is selected" />
     <MESSAGE value="handle orientation changes" />
     <MESSAGE value="migrate to androidx" />
-    <option name="LAST_COMMIT_MESSAGE" value="migrate to androidx" />
+    <MESSAGE value="make sure portrait photos are orientated correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="make sure portrait photos are orientated correctly" />
   </component>
 </project>
