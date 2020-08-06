@@ -122,14 +122,13 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
 
   void checkPhotoDimensions() {
     _checkImage = widget.image;
+    image = _checkImage;
     if (photoIsPortrait) {
       int width = _checkImage.width;
       int height = _checkImage.height;
       if (width > height) {
         image = imageLib.copyRotate(_checkImage, 90);
       }
-    } else {
-      image = _checkImage;
     }
   }
 
